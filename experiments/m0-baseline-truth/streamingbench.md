@@ -3,7 +3,7 @@
 > **Subset headline (ctx=full): RT-All 69.21 micro** · Omni 41.45 (vision-only) ·
 > Contextual-MCQ 38.79 · PO 28.95 · overall-MCQ-micro 57.25 (our defined aggregate).
 > 15% stratified subset, 648 MCQ + 38 PO, 0 errors. 2026-07-18.
-> ⏳ ctx=60s variant and full run in progress — this note updates when they land.
+> ctx=60s variant ✅ (2026-07-18): **beats ctx=full by +6.3 overall-MCQ** — see conclusions. Full run ⏳ in progress.
 
 ## Protocol
 
@@ -22,11 +22,11 @@ designed "gap". No LLM judge anywhere. Deviations: greedy pinned; response left-
 
 | Group | ctx=full | ctx=60s |
 |---|---|---|
-| **Real-Time All (micro, n=380)** | **69.21** | ⏳ |
-| **Omni-Source All (n=152)** | **41.45** | ⏳ |
-| **Contextual MCQ All (n=116)** | **38.79** | ⏳ |
+| **Real-Time All (micro, n=380)** | **69.21** | **74.74** |
+| **Omni-Source All (n=152)** | **41.45** | **46.05** |
+| **Contextual MCQ All (n=116)** | **38.79** | **50.00** (SQA 47.5→70.0) |
 | Proactive Output (n=38) | time 28.95 / ans 28.95 | n/a (ctx-independent) |
-| **Overall MCQ micro (n=648)** | **57.25** | ⏳ |
+| **Overall MCQ micro (n=648)** | **57.25** | **63.58** |
 
 Weakest RT subtasks: Counting 41.4, Spatial 56.8, Causal 60.0. Strongest: Prospective
 88.2, Attribute 82.6. Contextual: MCU 31.6 / ACU 36.8 / SQA 47.5. Omni floor: Scene
@@ -37,6 +37,11 @@ answers; identical protocol).
 
 ## Conclusions (so far)
 
+0. **The context setting is the biggest protocol lever measured in M0: ctx=60s > ctx=full
+   by +5.5 RT / +4.6 Omni / +11.2 Contextual / +6.3 overall-MCQ.** Full prefixes at 1 fps
+   dilute the recent frames most questions target. Exception: Counting prefers full
+   context (41.4 vs 31.0) — it needs the whole stream (axis-A memory logic). Any SB
+   number without a ctx label is uninterpretable.
 1. **RT-All 69.21 is the comparable number for vision-only baselines** — Omni (audio-
    dependent) and Contextual drag every cross-category aggregate; "SB overall" without a
    label is meaningless (and has no official aggregator — see findings).
