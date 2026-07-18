@@ -28,6 +28,11 @@ yes/no gate, break→answer) is documented as ours. Notable code excavation: the
 | imme (Live) | 43.10 | 58 |
 | **overall** | **42.07** | 290 |
 
+OE (judged, official prompt byte-identical, transformers reimpl): **27.24 overall under
+BOTH the shipped 7B judge and the paper-pinned 72B-AWQ judge** (per-item disagreement
+5.5%, symmetric — the judge fork is immaterial at this n; 7B suffices for iteration).
+OE per bucket (7B): second 27.6 / short 27.6 / middle 29.3 / **long 22.4** / imme 29.3.
+
 Reference (authors' pipeline): GPT-4o Retro 59.56 MC / Live 61.05 MC. Plan targets:
 Retro ≥ 60 MC (M2), Loc > 6.2 (M3).
 
@@ -36,8 +41,11 @@ Retro ≥ 60 MC (M2), Loc > 6.2 (M3).
 1. **~17 pts under GPT-4o's Retro MC with the official 16-frame budget** — the purest
    axis-A measurement in the program: 16 uniform frames over an hour of video is one
    frame per ~4 min. This is the number M2's memory methods exist to lift.
-2. **Non-monotone forgetting curve on the subset** (long bucket highest) — suspect
-   bucket×source confound at n=58; verify on the full run before interpreting.
+2. **MC forgetting curve is non-monotone (long highest) but the OE curve dips at long
+   (22.4) as theory predicts** — the MC spike is a distractor-difficulty confound; OE is
+   the cleaner forgetting readout. Verify on the full run.
+2b. **Judge fork resolved empirically**: 7B vs 72B judges agree at aggregate (identical
+   27.24) with 5.5% symmetric item noise — cheap 7B judging is fine, always labeled.
 3. RIVER is the cheapest benchmark to run (no ffmpeg re-encode; ~3.7 s/call) — good
    iteration target for M2 ablations.
 4. Video coverage: Retro/Live ~98% assembled (LVBench unlock was the key move);
