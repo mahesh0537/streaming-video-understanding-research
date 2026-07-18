@@ -49,8 +49,14 @@ Retro ≥ 60 MC (M2), Loc > 6.2 (M3).
    27.24) with 5.5% symmetric item noise — cheap 7B judging is fine, always labeled.
 3. RIVER is the cheapest benchmark to run (no ffmpeg re-encode; ~3.7 s/call) — good
    iteration target for M2 ablations.
-4. Video coverage: Retro/Live ~98% assembled (LVBench unlock was the key move);
-   Pro-Response pending QVHighlights (streaming in) + a sized Ego4D subset fetch.
+4. Video coverage: Retro/Live ~98%; Pro-Response instant 47% (QVHighlights assembled
+   via streaming extraction), streaming 15% (needs Ego4D top-up).
+5. **Instant Loc floor: 29.70 (n=94) — heavily caveated**: zero long-bucket coverage
+   (where published Loc collapses to ~1.6) and OUR gate definition (no official driver
+   ships). Citable per-bucket floors: second 22.1 / short 40.8 / middle 35.9; spoke
+   63/94, silent 31. Suggests the M3 polling floor on RIVER is far above the published
+   systems *on short-tolerance buckets* — verify with long-bucket coverage before any
+   claim. Ego4D top-up (~20-60 GB, subset's long-bucket videos) makes this honest.
 
 Raw runs: `/data/mahesh/svu-workspace/results/runs/m0-river-retrolive-subset15-qwen3vl8b/`.
 Anatomy: `/data/mahesh/svu-workspace/docs/river-harness-notes.md`.
