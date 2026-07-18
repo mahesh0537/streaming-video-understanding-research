@@ -11,7 +11,7 @@ next steps.
 | Milestone | Benchmark | Status | Headline (protocol-labeled) |
 |---|---|---|---|
 | M0 baseline truth | [[ovo-bench]] | ✅ full run 2026-07-17 | **51.59** overall, official harness (first such number on record) |
-| M0 baseline truth | [[streamingbench]] | ✅ subset ctx=full · ⏳ ctx=60s variant · ⏳ full run | RT-All **69.21** micro, shipped-code protocol (fps dead-code replicated) |
+| M0 baseline truth | [[streamingbench]] | ✅ subset ctx=full+ctx=60s · ⏳ full run | RT-All **69.21** (ctx=full) / **74.74** (ctx=60s); context is the biggest protocol lever (+6.3 overall) |
 | M0 baseline truth | [[river-bench]] | ✅ retro/live subset · ⏳ full + pro-response | Retro+Live MC **42.07** (first external baseline ever) |
 | M1 prompt layer (axis D) | – | ⬜ | HLD guard is the confirmed cheapest win (see findings) |
 | M2 memory bake-off (axis A) | – | ⬜ | order: re-prefill → SAVEMem → HERMES |
