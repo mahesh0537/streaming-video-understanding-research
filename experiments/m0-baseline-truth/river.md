@@ -2,8 +2,8 @@
 
 > **FULL-RUN headline: Retro+Live MC overall 43.78** (n=1825, 98% coverage) with a
 > **cleanly monotone forgetting curve**: imme 47.4 → second 46.0 → short 44.7 →
-> middle 42.2 → long 38.6 (−8.8 pts immediate→long recall). Subset (n=290): 42.07,
-> OE 27.24 both judges. 2026-07-18.
+> middle 42.2 → long 38.6 (−8.8 pts immediate→long recall). **Full-run OE 29.42** (7B
+> judge) decays monotonically too (34.0→22.5). Subset (n=290): MC 42.07 / OE 27.24. 2026-07-18.
 > [[river-bench]] has zero external adopters — these are the first non-author numbers.
 
 ## Protocol

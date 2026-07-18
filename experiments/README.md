@@ -12,7 +12,7 @@ next steps.
 |---|---|---|---|
 | M0 baseline truth | [[ovo-bench]] | ✅ full run 2026-07-17 | **51.59** overall, official harness (first such number on record) |
 | M0 baseline truth | [[streamingbench]] | ✅ subset ctx=full+ctx=60s · ⏳ full run | RT-All **69.21** (ctx=full) / **74.74** (ctx=60s); context is the biggest protocol lever (+6.3 overall) |
-| M0 baseline truth | [[river-bench]] | ✅ retro/live subset · ⏳ full + pro-response | Retro+Live MC **42.07** (first external baseline ever) |
+| M0 baseline truth | [[river-bench]] | ✅ retro/live FULL (98% cov) · ⏳ pro-response | **MC 43.78 / OE 29.42**, monotone forgetting curve — first external baseline ever |
 | M1 prompt layer (axis D) | – | ⬜ | HLD guard is the confirmed cheapest win (see findings) |
 | M2 memory bake-off (axis A) | – | ⬜ | order: re-prefill → SAVEMem → HERMES |
 | M3 triggers (axis C) | – | ⬜ | PO floor measured at ≈29 (subset) |
