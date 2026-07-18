@@ -1,8 +1,9 @@
 # M0 — frozen Qwen3-VL-8B on RIVER (first external baseline)
 
-> **Subset headline: Retro+Live MC overall 42.07** (n=290; 16-frame official driver
-> budget). Forgetting curve: second 43.1 / short 39.7 / middle 36.2 / long 48.3;
-> Live-Perception 43.1. OE cached, judge deferred. 2026-07-18.
+> **FULL-RUN headline: Retro+Live MC overall 43.78** (n=1825, 98% coverage) with a
+> **cleanly monotone forgetting curve**: imme 47.4 → second 46.0 → short 44.7 →
+> middle 42.2 → long 38.6 (−8.8 pts immediate→long recall). Subset (n=290): 42.07,
+> OE 27.24 both judges. 2026-07-18.
 > [[river-bench]] has zero external adopters — these are the first non-author numbers.
 
 ## Protocol
@@ -41,9 +42,9 @@ Retro ≥ 60 MC (M2), Loc > 6.2 (M3).
 1. **~17 pts under GPT-4o's Retro MC with the official 16-frame budget** — the purest
    axis-A measurement in the program: 16 uniform frames over an hour of video is one
    frame per ~4 min. This is the number M2's memory methods exist to lift.
-2. **MC forgetting curve is non-monotone (long highest) but the OE curve dips at long
-   (22.4) as theory predicts** — the MC spike is a distractor-difficulty confound; OE is
-   the cleaner forgetting readout. Verify on the full run.
+2. **Full-run verdict: the curve IS monotone** (imme 47.4 → long 38.6). The subset's
+   long-bucket spike was small-n noise — a caution logged for all subset-level curve
+   readings. OE agrees (dips at long).
 2b. **Judge fork resolved empirically**: 7B vs 72B judges agree at aggregate (identical
    27.24) with 5.5% symmetric item noise — cheap 7B judging is fine, always labeled.
 3. RIVER is the cheapest benchmark to run (no ffmpeg re-encode; ~3.7 s/call) — good
