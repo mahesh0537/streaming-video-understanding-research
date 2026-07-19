@@ -11,11 +11,11 @@ next steps.
 | Milestone | Benchmark | Status | Headline (protocol-labeled) |
 |---|---|---|---|
 | M0 baseline truth | [[ovo-bench]] | ✅ full run 2026-07-17 | **51.59** overall, official harness (first such number on record) |
-| M0 baseline truth | [[streamingbench]] | ✅ subset ctx=full+ctx=60s · ⏳ full run | RT-All **69.21** (ctx=full) / **74.74** (ctx=60s); context is the biggest protocol lever (+6.3 overall) |
+| M0 baseline truth | [[streamingbench]] | ✅ COMPLETE (subset both ctx + full run) | Full: RT-All **73.00**, overall-MCQ **58.68**, PO **32.40** (=STRIDE row); ctx=60s subset RT 74.74 |
 | M0 baseline truth | [[river-bench]] | ✅ retro/live FULL (98% cov) · ⏳ pro-response | **MC 43.78 / OE 29.42**, monotone forgetting curve — first external baseline ever |
 | M1 prompt layer (axis D) | – | ⬜ | HLD guard is the confirmed cheapest win (see findings) |
 | M2 memory bake-off (axis A) | – | ⬜ | order: re-prefill → SAVEMem → HERMES |
-| M3 triggers (axis C) | – | ⬜ | PO floor measured at ≈29 (subset) |
+| M3 triggers (axis C) | – | ⬜ | PO floor 32.40 (full, =STRIDE); RIVER Loc floors per-bucket recorded |
 | M4 composition | – | ⬜ | – |
 
 ## Files

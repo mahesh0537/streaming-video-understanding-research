@@ -3,7 +3,9 @@
 > **Subset headline (ctx=full): RT-All 69.21 micro** · Omni 41.45 (vision-only) ·
 > Contextual-MCQ 38.79 · PO 28.95 · overall-MCQ-micro 57.25 (our defined aggregate).
 > 15% stratified subset, 648 MCQ + 38 PO, 0 errors. 2026-07-18.
-> ctx=60s variant ✅ (2026-07-18): **beats ctx=full by +6.3 overall-MCQ** — see conclusions. Full run ⏳ in progress.
+> ctx=60s variant ✅: beats ctx=full by +6.3 overall-MCQ. **FULL RUN ✅ (2026-07-19,
+> ctx=full): RT-All 73.00 · Omni 40.00 · Contextual-MCQ 35.87 · PO 32.40 · overall-MCQ
+> 58.68** (4,500 q, 0 errors). PO matches STRIDE's published 32.40 to the decimal.
 
 ## Protocol
 
@@ -32,8 +34,20 @@ Weakest RT subtasks: Counting 41.4, Spatial 56.8, Causal 60.0. Strongest: Prospe
 88.2, Attribute 82.6. Contextual: MCU 31.6 / ACU 36.8 / SQA 47.5. Omni floor: Scene
 Understanding 21.1.
 
-Full-run table will replace this section when it completes (seeded with the subset's
-answers; identical protocol).
+### Full run (ctx=full, 2026-07-19)
+
+| Group | acc | n |
+|---|---|---|
+| Real-Time All (micro) | **73.00** | 2500 |
+| Omni-Source All | **40.00** | 1000 |
+| Contextual MCQ All | **35.87** | 750 |
+| Proactive Output | time **32.40** / ans 32.40 | 250 |
+| Overall MCQ micro | **58.68** | 4250 |
+
+Full-vs-subset: groups stable within ~4 pts; per-task varies more (Counting +17.7,
+SQA −8.3) — subsets are for iteration, groups for tracking, full runs for milestones.
+**PO 32.40 == STRIDE's published baseline row exactly** — our polling floor reproduces
+the de-facto protocol; the M3 target band is 32.4 → 44.0 (Response-G1's mark).
 
 ## Conclusions (so far)
 
